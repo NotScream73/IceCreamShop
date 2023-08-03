@@ -1,0 +1,28 @@
+﻿@{
+	ViewData["Title"] = "AddIceCream";
+}
+<div class="text-center">
+	<h2 class="display-4">Добавление мороженого в магазин</h2>
+</div>
+<form method="post">
+	<div class="row">
+		<div class="col-4">Магазин:</div>
+		<div class="col-8">
+			<select id="shop" name="shop" class="form-control" asp-items="@(new SelectList(@ViewBag.Shops,"Id", "ShopName"))"></select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-4">Мороженое:</div>
+		<div class="col-8">
+			<select id="iceCream" name="iceCream" class="form-control" asp-items="@(new SelectList(@ViewBag.IceCreams,"Id", "IceCreamName"))"></select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-4">Количество мороженого:</div>
+		<div class="col-8"><input type="text" id="count" name="count" /></div>
+	</div>
+	<div class="row">
+		<div class="col-8"></div>
+		<div class="col-4"><input type="submit" value="Добавить" class="btn btn-primary" /></div>
+	</div>
+</form>
